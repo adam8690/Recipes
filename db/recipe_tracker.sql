@@ -4,7 +4,7 @@ DROP TABLE recipes;
 
 CREATE TABLE recipes(
 id SERIAL4 PRIMARY KEY,
-name VARCHAR(255),
+recipe_name VARCHAR(255),
 method VARCHAR(2550)
 );
 
