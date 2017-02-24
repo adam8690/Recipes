@@ -1,9 +1,11 @@
 require('pry')
 require_relative('../models/ingredient.rb')
 require_relative('../models/recipe.rb')
+require_relative('../models/recipe-ingredient.rb')
 
 Ingredient.delete_all
 Recipe.delete_all
+RecipeIngredient.delete_all
 
 ingredient1 = Ingredient.new({
   'name' => 'bread',
@@ -25,6 +27,22 @@ recipe1 = Recipe.new({
   })
 
 recipe1.save
+
+recipe1ingredient1 = RecipeIngredient.new({
+  'ingredient_id' => ingredient1.id, 
+  'recipe_id' => recipe1.id
+})
+
+recipe1ingredient1.save
+
+recipe1ingredient2 = RecipeIngredient.new({
+  'ingredient_id' => ingredient2.id, 
+  'recipe_id' => recipe1.id
+})
+
+recipe1ingredient2.save
+
+
 
 binding.pry
 nil

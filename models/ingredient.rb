@@ -2,6 +2,9 @@ require_relative('../db/sqlrunner.rb')
 
 class Ingredient
 
+attr_accessor :name, :unit
+attr_reader :id
+
 def initialize( options )
   @id = nil || options['id'].to_i
   @name = options['name']
