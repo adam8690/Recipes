@@ -1,4 +1,5 @@
 require_relative('../models/ingredient.rb')
+require_relative('../models/recipe.rb')
 
 Ingredient.delete_all
 
@@ -15,3 +16,10 @@ ingredient2 = Ingredient.new({
   })
 
 ingredient2.save
+
+recipe1 = Recipe.new({
+  'recipe_name' => 'toast',
+  'method' => 'Put bread in toaster and wait until golden brown. spread butter onto toasted bread. Serve on a plate.'
+  })
+
+recipe1.save

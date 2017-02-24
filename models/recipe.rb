@@ -10,7 +10,9 @@ def initialize( options )
 end
 
 def save
-sql = 
+sql = "INSERT INTO recipes (recipe_name, method) VALUES ('#{@recipe_name}', '#{@method}') RETURNING * ;"
+result = SqlRunner.run(sql)
+@id = result.first['id'].to_i
 end
 
 
