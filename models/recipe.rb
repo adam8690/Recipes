@@ -30,13 +30,13 @@ def self.delete_all
   SqlRunner.run(sql)
 end
 
-def delete(id)
+def self.delete(id)
   sql = "DELETE FROM recipes WHERE id = #{id}"
   SqlRunner.run(sql)
 end 
 
-def show(id)
-  sql = "SELECT * FROM recipes WHERE id ={id}"
+def self.show(id)
+  sql = "SELECT * FROM recipes WHERE id =#{id}"
   return SqlRunner.run(sql)
 end
 

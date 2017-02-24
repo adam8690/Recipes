@@ -15,7 +15,7 @@ def save
 end
 
 def self.delete_all
-  sql = ("DELETE FROM ingredients")
+  sql = "DELETE FROM ingredients"
   SqlRunner.run(sql)
 end
 
