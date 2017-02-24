@@ -40,4 +40,11 @@ def self.show(id)
   return SqlRunner.run(sql)
 end
 
+def ingredients
+    sql = "SELECT i.* FROM ingredients i INNER JOIN recipe_ingredients ri ON ri.ingredient_id = i.id WHERE recipe_id = #{@id}"
+    results = SqlRunner.run(sql)
+    
+  return results.map {|ingredient| Ingredient.new( ingredient )}
+end
+
 end

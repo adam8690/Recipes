@@ -3,9 +3,9 @@ require_relative('../models/ingredient.rb')
 require_relative('../models/recipe.rb')
 require_relative('../models/recipe-ingredient.rb')
 
+RecipeIngredient.delete_all
 Ingredient.delete_all
 Recipe.delete_all
-RecipeIngredient.delete_all
 
 ingredient1 = Ingredient.new({
   'name' => 'bread',
