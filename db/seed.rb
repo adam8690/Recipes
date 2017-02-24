@@ -1,5 +1,7 @@
 require_relative('../models/ingredient.rb')
 
+Ingredient.delete_all
+
 ingredient1 = Ingredient.new({
   'name' => 'bread',
   'unit' => 'slice'

@@ -9,7 +9,9 @@ def initialize( options )
 @method = options['method']
 end
 
-
+def save
+sql = 
+end
 
 
 end
