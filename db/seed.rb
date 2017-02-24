@@ -43,6 +43,5 @@ recipe1ingredient2 = RecipeIngredient.new({
 recipe1ingredient2.save
 
 
-
 binding.pry
 nil

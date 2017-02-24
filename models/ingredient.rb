@@ -22,4 +22,10 @@ def self.delete_all
   SqlRunner.run(sql)
 end
 
+def recipes
+  sql ="SELECT r.* FROM recipes r INNER JOIN recipe_ingredients ri ON ri.recipe_id = r.id WHERE ingredient_id = #{@id};"
+  result = SqlRunner.run(sql)
+  return  result.map{ |recipe| Recipe.new( recipe ) }
+end
+
 end
