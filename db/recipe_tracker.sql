@@ -1,3 +1,4 @@
+DROP TABLE shopping_list;
 DROP TABLE recipe_ingredients;
 DROP TABLE ingredients;
 DROP TABLE recipes;
@@ -23,6 +24,6 @@ recipe_id INT4 REFERENCES recipes(id)
 
 CREATE TABLE shopping_list(
 id SERIAL4 PRIMARY KEY,
-recipe_id INT4, 
-ingredient VARCHAR(255)
+recipe_id INT4 REFERENCES recipes(id), 
+name VARCHAR(255)
 );
