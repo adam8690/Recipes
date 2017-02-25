@@ -10,11 +10,17 @@ get '/recipes' do
 end
 
 get '/recipes/new' do 
-
+  @recipes = Recipe.show_all
+  @ingredients = Ingredient.
   erb(:new)
 end
 
 get '/recipes/:id' do 
-@recipe = Recipe.show(:id)
-erb(:recipe)
+  @recipe = Recipe.show(:id)
+  erb(:recipe)
+end
+
+post '/recipes' do 
+
+  erb(:recipes)
 end

@@ -17,6 +17,7 @@ def save
   @id = result.first()['id'].to_i
 end
 
+
 def self.delete_all
   sql = "DELETE FROM ingredients"
   SqlRunner.run(sql)
