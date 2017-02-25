@@ -24,7 +24,7 @@ end
 
 def self.find_all
   sql = "SELECT * FROM recipes"
-  return SqlRunner.run(sql)
+  return SqlRunner.run(sql).map{ |recipe| Recipe.new(recipe) }
 end
 
 def self.delete_all
@@ -49,7 +49,7 @@ def ingredients
   return results.map {|ingredient| Ingredient.new( ingredient )}
 end
 
-def add_recipe_to_shopping_list
+def add_to_shopping_list
     sql = "SELECT recipe_id, name FROM ingredients i INNER JOIN recipe_ingredients ri ON ri.ingredient_id = i.id WHERE recipe_id = #{@id}"
     results = SqlRunner.run(sql)
     

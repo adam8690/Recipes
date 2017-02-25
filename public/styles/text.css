@@ -1,0 +1,12 @@
+body { 
+margin:; 0 0 20px;
+font-family: sans-serif;
+}
+
+.footer { 
+position: absolute;
+bottom: 0;
+height: 20px;
+width: 100%;
+font-size: 0.7em
+ }

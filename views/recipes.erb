@@ -1,0 +1,9 @@
+<h1>Recipes</h1>
+
+<p>List of recipes</p>
+
+<% for recipe in @recipes %>
+<p><a href="/recipes/<%= recipe.id %>">
+  <%= recipe.recipe_name %></a>
+</p>
+<% end %>

@@ -43,6 +43,7 @@ recipe1ingredient2 = RecipeIngredient.new({
 
 recipe1ingredient2.save
 
+recipe1.add_to_shopping_list
 
 binding.pry
 nil
