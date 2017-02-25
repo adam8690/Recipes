@@ -1,3 +1,5 @@
+require_relative('./list_item.rb')
+
 class Recipe
 
 attr_accessor :recipe_name, :method
@@ -45,6 +47,17 @@ def ingredients
     results = SqlRunner.run(sql)
     
   return results.map {|ingredient| Ingredient.new( ingredient )}
+end
+
+def add_recipe_to_shopping_list
+    sql = "SELECT recipe_id, name FROM ingredients i INNER JOIN recipe_ingredients ri ON ri.ingredient_id = i.id WHERE recipe_id = #{@id}"
+    results = SqlRunner.run(sql)
+    
+    for ingredient in results
+      listitem = ListItem.new( ingredient )
+      listitem.save
+    end
+
 end
 
 end

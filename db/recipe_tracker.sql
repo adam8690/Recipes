@@ -20,3 +20,9 @@ id SERIAL4 PRIMARY KEY,
 ingredient_id INT4 REFERENCES ingredients(id),
 recipe_id INT4 REFERENCES recipes(id)
 );
+
+CREATE TABLE shopping_list(
+id SERIAL4 PRIMARY KEY,
+recipe_id INT4, 
+ingredient VARCHAR(255)
+);

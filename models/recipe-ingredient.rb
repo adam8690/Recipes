@@ -20,12 +20,5 @@ def self.delete_all
   SqlRunner.run(sql)
 end
 
-def show_ingredients
-    sql = "SELECT * FROM ingredients i INNER JOIN recipe_ingredients ri ON ri.ingredient_id = i.id WHERE recipe_id = #{@recipe_id}"
-    results = SqlRunner.run(sql)
-    for ingredient in results 
-      return Ingredient.new( ingredient )
-    end
-end
 
 end
