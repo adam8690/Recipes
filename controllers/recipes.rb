@@ -10,8 +10,8 @@ get '/recipes' do
 end
 
 get '/recipes/new' do 
-  @recipes = Recipe.show_all
-  @ingredients = Ingredient.
+  # @recipes = Recipe.show_all
+  # @ingredients = Ingredient
   erb(:new)
 end
 

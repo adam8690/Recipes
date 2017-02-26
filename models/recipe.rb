@@ -39,7 +39,7 @@ end
 
 def self.show(id)
   sql = "SELECT * FROM recipes WHERE id =#{id}"
-  return SqlRunner.run(sql)
+  return SqlRunner.run(sql).map{ |recipe| Recipe.new(recipe) }
 end
 
 def ingredients
