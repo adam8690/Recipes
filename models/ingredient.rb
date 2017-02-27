@@ -2,8 +2,7 @@ require_relative('../db/sqlrunner.rb')
 
 class Ingredient
 
-attr_accessor :name, :unit
-attr_reader :id
+attr_accessor :name, :unit, :id
 
 def initialize( options )
   @id = nil || options['id'].to_i
@@ -15,6 +14,11 @@ def save
   sql = "INSERT INTO ingredients (name, unit) VALUES ('#{@name}', '#{@unit}') RETURNING * ;"
   result = SqlRunner.run(sql)
   @id = result.first()['id'].to_i
+end
+
+def self.show(name)
+  sql = "SELECT * FROM ingredients WHERE name = '#{name}'"
+  return result = SqlRunner.run(sql).map { |ingredient| Ingredient.new( ingredient )}
 end
 
 

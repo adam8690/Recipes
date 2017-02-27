@@ -18,12 +18,12 @@ unit VARCHAR(255)
 
 CREATE TABLE recipe_ingredients(
 id SERIAL4 PRIMARY KEY,
-ingredient_id INT4 REFERENCES ingredients(id),
-recipe_id INT4 REFERENCES recipes(id)
+ingredient_id INT4 REFERENCES ingredients(id) ON DELETE CASCADE,
+recipe_id INT4 REFERENCES recipes(id) ON DELETE CASCADE
 );
 
 CREATE TABLE shopping_list(
 id SERIAL4 PRIMARY KEY,
-recipe_id INT4 REFERENCES recipes(id), 
+recipe_id INT4 REFERENCES recipes(id) ON DELETE CASCADE, 
 name VARCHAR(255)
 );
