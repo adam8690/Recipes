@@ -8,5 +8,9 @@ position: absolute;
 bottom: 0;
 height: 20px;
 width: 100%;
-font-size: 0.7em
+font-size: 0.7em;
  }
+
+input.recipe-name {
+  font: 1.8em system-ui;
+}

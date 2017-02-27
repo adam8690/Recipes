@@ -10,17 +10,18 @@ get '/recipes' do
 end
 
 get '/recipes/new' do 
-  # @recipes = Recipe.show_all
-  # @ingredients = Ingredient
   erb(:new)
 end
 
 get '/recipes/:id' do 
-  @recipe = Recipe.show(:id)
+  @recipe = Recipe.show(params[:id])
   erb(:recipe)
 end
 
 post '/recipes' do 
-
-  erb(:recipes)
+  @recipe = Recipe.new( {'recipe_name' => params[:recipe_name], 'method' => params[:method]} )
+  @recipe.save
+  p @ingredients = params[:ingredients]
+  redirect to '/recipes'
 end
+

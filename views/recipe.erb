@@ -1,12 +1,12 @@
-<h1><%= @recipe[0].recipe_name %></h1>
+<h1><%= @recipe.recipe_name %></h1>
 
 <h2>Ingredients</h2>
 
-<% ingredients = @recipe[0].ingredients %>
+<% ingredients = @recipe.ingredients %>
 
 <% for ingredient in ingredients %>
 <p> <%= ingredient.name %> 
 <% end %> </p>
 
 <h2>Method</h2>
-<p><%= @recipe[0].method %></p>
+<p><%= @recipe.method %></p>

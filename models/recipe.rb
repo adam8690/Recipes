@@ -38,8 +38,9 @@ def self.delete(id)
 end 
 
 def self.show(id)
-  sql = "SELECT * FROM recipes WHERE id =#{id}"
-  return SqlRunner.run(sql).map{ |recipe| Recipe.new(recipe) }
+  sql = "SELECT * FROM recipes WHERE id=#{id}"
+  result = SqlRunner.run(sql).first
+  return Recipe.new(result)
 end
 
 def ingredients

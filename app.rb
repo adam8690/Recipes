@@ -1,7 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative('./controllers/recipes.rb')
-require_relative('./controllers/shopping_list.rb')
+require_relative('./controllers/recipes_controller.rb')
+require_relative('./controllers/shopping_list_controller.rb')
 
 
 get '/' do 

@@ -2,3 +2,20 @@
 
 <p>Fill out the form to add a new recipe.</p>
 
+<form action ='/recipes' method="post">
+
+  <input class="recipe-name" type="text" name="recipe_name" id="recipe-name" placeholder="Recipe name" >
+
+  <h2><label for="ingredients">Ingredients:</label></h2>
+  <textarea name="ingredients" id="ingredients" rows="9" cols="50" style="font-size: 1em" placeholder="Enter each ingredient separated by a comma. e.g. toast, bread, etc."></textarea>
+  <br>
+
+
+  <h2><label for="method">Method:</label></h2>
+
+  <textarea name="method" id="method" rows="9" cols="50" style="font-size: 1em" placeholder="Write the method here!"></textarea>
+  <br>
+  <input class="btn" type="submit" value="Save Recipe!"/>
+
+</form>
+
