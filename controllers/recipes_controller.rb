@@ -27,7 +27,7 @@ post '/recipes' do
 
   for ingredient in @ingredients_array
     new_ingredient = Ingredient.new({
-      'name' => ingredient ,
+      'name' => ingredient.strip ,
       'unit' => ''
       })
     new_ingredient.save
