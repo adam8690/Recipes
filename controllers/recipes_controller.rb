@@ -42,3 +42,8 @@ post '/recipes' do
   redirect to '/recipes'
 
 end
+
+post '/recipes/:id/delete' do
+  Recipe.delete(params[:id])
+  redirect to '/recipes'
+end

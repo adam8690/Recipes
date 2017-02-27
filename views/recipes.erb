@@ -1,7 +1,18 @@
 <h1>Recipes</h1>
 
+
 <% for recipe in @recipes %>
 <p><a href="/recipes/<%= recipe.id %>">
   <%= recipe.recipe_name %></a>
+
+<form action="/recipes/<%= recipe.id %>/edit" method="post">
+  <input class="btn"  type="submit" value="Edit Recipe"/> 
+ </form>
+
+ <form action="/recipes/<%= recipe.id %>/delete" method="post">
+  <input class="btn"  type="submit" value="Delete Recipe"/> 
+ </form>
+
+
 </p>
 <% end %>
