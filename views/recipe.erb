@@ -8,6 +8,11 @@
 <p><%= ingredient.name %></p> 
 <% end %>
 
+<form action='/shopping_list/<%= @recipe.id %>' method="post">
+  <input class="btn" type="submit" value="Add Ingredients to Shopping List">
+  </form>
+
+
 <h2>Method</h2>
 <p><%= @recipe.method %></p>
 

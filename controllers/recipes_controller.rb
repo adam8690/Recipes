@@ -20,7 +20,6 @@ get '/recipes/:id' do
 end
 
 post '/recipes' do 
-  # params[:ingredients] = params[:ingredients].delete_if { |ingredient| ingredient.empty? }
   @recipe = Recipe.new( {'recipe_name' => params[:recipe_name], 'method' => params[:method]} )
   @recipe.save
   ingredients_string = params[:ingredients]
@@ -40,7 +39,6 @@ erb(:update)
 end
 
 post '/recipes/:id/edit' do
-  # params[:ingredients] = params[:ingredients].delete_if { |ingredient| ingredient.empty? }
   @recipe = Recipe.new(params)
   @recipe.update
   ingredients_string = params[:ingredients]

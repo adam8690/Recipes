@@ -3,3 +3,7 @@
 <% for item in @list %>
 <p><%= item.name %></p>
 <%end%>
+
+<form action='/shopping_list/delete_all' method="post">
+<input class="btn", type="submit" value="Delete List">
+</form>

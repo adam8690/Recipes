@@ -71,7 +71,7 @@ end
 
 def save_ingredient_string_if_new(string)
   ingredients_array = string.split(",")
-
+  ingredients_array.delete_if { |ingredient| ingredient.empty? }
   #delete all instances of recipe id (e.g 1 chocolate cake)
   RecipeIngredient.delete(@id)
 
