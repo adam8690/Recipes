@@ -9,7 +9,7 @@
 <% end %>
 
 <form action='/shopping_list/<%= @recipe.id %>' method="post" onsubmit="return confirm('Recipe ingredients have been added to shopping list!')">
-  <input class="btn" type="submit" value="Add Ingredients to Shopping List">
+  <input class="btn-green" type="submit" value="Add Ingredients to Shopping List">
   </form>
 
 
@@ -18,10 +18,10 @@
 
 <p>
 <form action="/recipes/<%= @recipe.id %>/edit" method="get">
-  <input class="btn"  type="submit" value="Edit Recipe"/> 
+  <input class="btn-orange"  type="submit" value="Edit Recipe"/> 
  </form>
 
  <form action="/recipes/<%= @recipe.id %>/delete" method="post">
-  <input class="btn"  type="submit" value="Delete Recipe"/> 
+  <input class="btn-red"  type="submit" value="Delete Recipe"/> 
  </form>
 </p>

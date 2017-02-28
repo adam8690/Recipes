@@ -1,4 +1,4 @@
-<h1>Update Recipe</h1>
+<h2>Update Recipe</h2>
 
 <p>Edit the form to update the recipe.</p>
 
@@ -6,21 +6,21 @@
 
   <input class="recipe-name" type="text" name="recipe_name" id="recipe-name" value="<%= @recipe.recipe_name %>"></input>
 
-  <h2><label for="ingredients">Ingredients:</label></h2>
-  <textarea name="ingredients" id="ingredients" rows="9" cols="50" style="font-size: 1em"><% for ingredient in @recipe.ingredients %><%="#{ingredient.name.strip}, " %>
+  <h3><label for="ingredients">Ingredients:</label></h3>
+  <textarea name="ingredients" id="ingredients" rows="7" cols="65" style="font-size: 1em"><% for ingredient in @recipe.ingredients %><%="#{ingredient.name.strip}, " %>
   <% end %>
   </textarea>
   <br>
 
 
-  <h2><label for="method">Method:</label></h2>
+  <h3><label for="method">Method:</label></h3>
 
-  <textarea name="method" id="method" rows="9" cols="50" style="font-size: 1em"><%= @recipe.method %></textarea>
+  <textarea name="method" id="method" rows="7" cols="65" style="font-size: 1em"><%= @recipe.method %></textarea>
   <br>
-  <input class="btn" type="submit" value="Update Recipe!"/>
+  <input class="btn-green" type="submit" value="Update Recipe!"/>
 
 </form>
 <form action= '/recipes' method="get">
-  <input class "btn" type="submit" value="I changed my mind, take me back">
+  <input class="btn-orange" type="submit" value="I changed my mind, take me back">
 </form>
 
