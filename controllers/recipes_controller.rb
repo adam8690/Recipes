@@ -20,33 +20,11 @@ get '/recipes/:id' do
 end
 
 post '/recipes' do 
+  # params[:ingredients] = params[:ingredients].delete_if { |ingredient| ingredient.empty? }
   @recipe = Recipe.new( {'recipe_name' => params[:recipe_name], 'method' => params[:method]} )
   @recipe.save
   ingredients_string = params[:ingredients]
-  @ingredients_array = ingredients_string.split(",")
-
-  for ingredient in @ingredients_array
-    new_ingredient = Ingredient.new({
-      'name' => ingredient.strip,
-      'unit' => ''
-      })
-    # Ingredient.show returns the ingredient object if the name passed in exists in the database. if new_ingredient.name exists in the database the returned object will be equal to new_ingredient. If this is not the case the new ingredient will be saved else recipe_ingredient will be saved with the new relationship between recipe and ingredient added to the db. 
-    found_ingredient = Ingredient.show(new_ingredient.name).first
-
-    if found_ingredient == nil
-      new_ingredient.save
-    else 
-      new_ingredient.id = found_ingredient.id
-    end
-    
-      recipe_ingredient = RecipeIngredient.new({
-        'ingredient_id' => new_ingredient.id,
-        'recipe_id' => @recipe.id
-        })
-      recipe_ingredient.save
-    
-  end
-  
+  @recipe.save_ingredient_string_if_new(ingredients_string)
   redirect to '/recipes'
 
 end
@@ -54,4 +32,18 @@ end
 post '/recipes/:id/delete' do
   Recipe.delete(params[:id])
   redirect to '/recipes'
+end
+
+get '/recipes/:id/edit' do
+@recipe = Recipe.show(params[:id])
+erb(:update)
+end
+
+post '/recipes/:id/edit' do
+  # params[:ingredients] = params[:ingredients].delete_if { |ingredient| ingredient.empty? }
+  @recipe = Recipe.new(params)
+  @recipe.update
+  ingredients_string = params[:ingredients]
+  @recipe.save_ingredient_string_if_new(ingredients_string)
+  redirect to "/recipes/#{params[:id]}"
 end

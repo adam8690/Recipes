@@ -5,8 +5,18 @@
 <% ingredients = @recipe.ingredients %>
 
 <% for ingredient in ingredients %>
-<p> <%= ingredient.name %> 
-<% end %> </p>
+<p><%= ingredient.name %></p> 
+<% end %>
 
 <h2>Method</h2>
 <p><%= @recipe.method %></p>
+
+<p>
+<form action="/recipes/<%= @recipe.id %>/edit" method="get">
+  <input class="btn"  type="submit" value="Edit Recipe"/> 
+ </form>
+
+ <form action="/recipes/<%= @recipe.id %>/delete" method="post">
+  <input class="btn"  type="submit" value="Delete Recipe"/> 
+ </form>
+</p>

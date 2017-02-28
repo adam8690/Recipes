@@ -12,8 +12,7 @@ method VARCHAR(2550)
 
 CREATE TABLE ingredients(
 id SERIAL4 PRIMARY KEY,
-name VARCHAR(255),
-unit VARCHAR(255)
+name VARCHAR(255)
 );
 
 CREATE TABLE recipe_ingredients(

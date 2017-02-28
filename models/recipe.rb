@@ -17,6 +17,14 @@ def save
   @id = result.first['id'].to_i
 end
 
+def update
+  sql = "UPDATE recipes SET
+    recipe_name = '#{@recipe_name}',
+    method = '#{@method}'
+    WHERE id =#{@id};"
+    SqlRunner.run(sql)
+end
+
 def self.find_names
   sql = "SELECT recipe_name FROM recipes"
   return SqlRunner.run(sql)
@@ -60,5 +68,34 @@ def add_to_shopping_list
     end
 
 end
+
+def save_ingredient_string_if_new(string)
+  ingredients_array = string.split(",")
+
+  #delete all instances of recipe id (e.g 1 chocolate cake)
+  RecipeIngredient.delete(@id)
+
+  for ingredient in ingredients_array
+    new_ingredient = Ingredient.new({
+      'name' => ingredient.strip
+      })
+    
+    found_ingredient = Ingredient.show(new_ingredient.name).first
+
+    if found_ingredient == nil
+      new_ingredient.save
+    else
+      new_ingredient.id = found_ingredient.id
+    end
+    
+    recipe_ingredient = RecipeIngredient.new({
+      'ingredient_id' => new_ingredient.id,
+      'recipe_id' => @id
+      })
+    recipe_ingredient.save
+      
+  end
+
+end 
 
 end
