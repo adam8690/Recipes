@@ -4,6 +4,7 @@ background-color: #ffffe6;
 
 h1 {
   font-family: Courier New;
+  display: inline-block;
 }
 
 body { 
@@ -35,12 +36,15 @@ input.btn-green {
   color: white;
   padding: 5px 5px;
   text-align: center;
-  margin: 5px 0 !important;
+  margin: 5px 5px !important;
   text-decoration: none;
   font-size: 15px;
   cursor: pointer;
   display: inline-block;
   font-family: Courier New;
+  float: left;
+  position: relative;
+  left: -5px;
 }
 
 input.btn-orange {
@@ -49,12 +53,15 @@ input.btn-orange {
   color: white;
   padding: 5px 5px;
   text-align: center;
-  margin: 5px 0 !important;
+  margin: 5px 5px !important;
   text-decoration: none;
   font-size: 15px;
   cursor: pointer;
   display: inline-block;
   font-family: Courier New;
+  float: left;
+  position: relative;
+  left: -5px;
 }
 
   input.btn-red {
@@ -63,7 +70,7 @@ input.btn-orange {
   color: white;
   padding: 5px 5px;
   text-align: center;
-  margin: 5px 0 !important;
+  margin: 5px 5px !important;
   text-decoration: none;
   font-size: 15px;
   cursor: pointer;
@@ -93,4 +100,10 @@ a.recipe {
   font-size: 18px;
   font-weight: bold;
   color: black;
+}
+
+img {
+  position: relative;
+      left: 200px;
+      top: 20px;
 }
