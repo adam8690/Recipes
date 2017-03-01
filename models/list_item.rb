@@ -25,5 +25,10 @@ def self.show_all
   return SqlRunner.run(sql).map{ |ingredient| ListItem.new( ingredient ) }
 end
 
+def self.delete(id)
+  sql="DELETE FROM shopping_list WHERE id=#{id};"
+  SqlRunner.run(sql)
+end
+
 end
 

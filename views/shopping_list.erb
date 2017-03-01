@@ -1,9 +1,12 @@
 <h2>Shopping List</h2>
-
-<% for item in @list %>
 <hr>
+<% for item in @list %>
 <p><%= item.name %></p>
+<form action="/shopping_list/<%= item.id %>/delete/" method="post">
+<input class="btn-red", type="submit" value="Delete From Shopping List">
+</form>
+<hr>
 <%end%>
 <form action='/shopping_list/delete_all' method="post">
-<input class="btn-red", type="submit" value="Delete List">
+<input class="btn-red", type="submit" value="Clear List">
 </form>

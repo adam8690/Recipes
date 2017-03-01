@@ -14,8 +14,16 @@ post '/shopping_list/delete_all' do
   redirect to '/shopping_list'
 end
 
+post '/shopping_list/:id/delete/' do
+  ListItem.delete(params[:id])
+  redirect to '/shopping_list'
+end
+
+
 post '/shopping_list/:id' do
   @recipe = Recipe.show(params[:id])
   @recipe.add_to_shopping_list
   redirect to "/recipes/#{params[:id]}"
 end
+
+
