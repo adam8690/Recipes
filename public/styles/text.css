@@ -14,20 +14,27 @@ font-family: Courier New;
 
 .container { 
 margin: 0 auto;
-width: 600px;
+width: 650px;
  }
 
-.footer { 
+/*.footer { 
 position: absolute;
 bottom: 0;
 height: 20px;
 width: 100%;
 font-size: 0.7em;
- }
+ }*/
 
 input.recipe-name {
   font: 1.8em system-ui;
   font-family: Courier New;
+}
+
+input.search {
+  font: 1.5em system-ui;
+  font-family: Courier New;
+  width: 400px;
+  display: inline-block;
 }
 
 input.btn-green {
@@ -43,6 +50,22 @@ input.btn-green {
   display: inline-block;
   font-family: Courier New;
   float: left;
+  position: relative;
+  left: -5px;
+}
+
+input.btn-go {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  margin: 5px 5px !important;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Courier New;
   position: relative;
   left: -5px;
 }
@@ -104,6 +127,17 @@ a.recipe {
 
 img {
   position: relative;
-      left: 200px;
+      left: 300px;
       top: 20px;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+table td, th {
+  border: 1px solid black;
+  padding: 5px;
 }

@@ -4,6 +4,7 @@ require( 'pry-byebug' )
 require_relative('../models/recipe.rb')
 require_relative('../models/ingredient.rb')
 require_relative('../models/recipe-ingredient.rb')
+require_relative('../models/search.rb')
 
 get '/recipes' do 
   @recipes = Recipe.find_all
@@ -44,4 +45,13 @@ post '/recipes/:id/edit' do
   ingredients_string = params[:ingredients]
   @recipe.save_ingredient_string_if_new(ingredients_string)
   redirect to "/recipes/#{params[:id]}"
+end
+
+get '/search/' do 
+  erb(:search)
+end
+
+post '/search/result' do
+@results = Search.recipes_with(params[:term]) #results is a array of hashes containing found ingredient mapped to a recipe. results["ingredient"] returns the ingredient found and results["recipe"] returns the respective recipe. 
+erb(:search_result)
 end

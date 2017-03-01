@@ -1,0 +1,17 @@
+<h2>Search results</h2>
+
+<table>
+<tr>
+  <th>Found ingredient</th>
+  <th>Recipe</th>
+</tr>
+
+<% for result in @results %>
+<%= 
+"<tr>
+<td>#{result['ingredient']}</td>
+<td>#{result['recipe']}</td>
+</tr>" 
+%>
+<% end %>
+</table>

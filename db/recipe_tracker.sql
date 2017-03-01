@@ -18,7 +18,8 @@ name VARCHAR(255)
 CREATE TABLE recipe_ingredients(
 id SERIAL4 PRIMARY KEY,
 ingredient_id INT4 REFERENCES ingredients(id) ON DELETE CASCADE,
-recipe_id INT4 REFERENCES recipes(id) ON DELETE CASCADE
+recipe_id INT4 REFERENCES recipes(id) ON DELETE CASCADE,
+qty VARCHAR(255)
 );
 
 CREATE TABLE shopping_list(
