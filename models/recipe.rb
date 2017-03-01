@@ -62,11 +62,6 @@ def add_to_shopping_list
     sql = "SELECT recipe_id, name FROM ingredients i INNER JOIN recipe_ingredients ri ON ri.ingredient_id = i.id WHERE recipe_id = #{@id}"
     results = SqlRunner.run(sql)
     
-    # for ingredient in results
-    #   listitem = ListItem.new( ingredient )
-    #   listitem.save
-    # end
-
   results = results.map {|item| ListItem.new( item ).save }
   
 end
