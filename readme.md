@@ -7,8 +7,8 @@ The recipes and ingredients are persisted in a PostGres SQL database.
 You can also search by ingredient and see all of the recipes which use that item. 
 
 ## Screenshots
-![List of recipes](Screenshot1.jpg?raw=true "List of recipes")
-![Edit Recipe](Screenshot2.jpg?raw=true "Edit Recipe")
+![List of recipes](Screenshot1.JPG "List of recipes")
+![Edit Recipe](Screenshot2.JPG "Edit Recipe")
 
 ## Mac/Linux Installation
 
