@@ -35,6 +35,6 @@ recipe4.save_ingredient_string_if_new(ingredients_string)
 
 recipe1.add_to_shopping_list
 
-binding.pry
+# binding.pry
 nil
 
