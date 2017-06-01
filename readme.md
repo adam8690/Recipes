@@ -22,3 +22,7 @@ You can also search by ingredient and see all of the recipes which use that item
 12. Start the server `ruby app.rb`
 13. Use your browser to navigate to localhost:4567
 14. Enjoy!
+
+## Windows Notes
+
+I am running it on Windows 10 creators update using Ubuntu on Bash on Windows, so the steps above are the same when using the bash shell. Ruby and all of the gems are installed and run from the ubuntu bash shell. Postgres is installed and running on the Windows side which is the easiest and probably fastest way to use the database at present. This is why the extra parameters are required in the sqlrunner file and when accessing postgres from the command line. 
